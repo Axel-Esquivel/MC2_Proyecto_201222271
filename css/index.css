@@ -1,0 +1,47 @@
+.conainer{
+    background-color: rgba(46, 46, 46, 0.9);
+    color: #fff;
+}
+
+.centrar_titulo {
+    margin-top: 1em;
+    text-align: center;
+    margin-bottom: 0.1em;
+}
+
+.formulario {
+    padding: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenedor-contenedores{
+    margin: 2em;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenedor-cartas {
+    width: 35em;
+    padding: 1em;
+    height: 40em;
+    margin: 0.2em;
+    position: relative;
+    /* border: 0.2em solid black; */
+}
+
+.carta {
+    width: 6em;
+    height: 10em;
+    position: absolute;
+    background-color: green;
+    border: 0.1em solid black;
+}
+
+.seleccionada {
+    background-color: red;
+}
