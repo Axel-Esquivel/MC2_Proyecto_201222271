@@ -26,6 +26,9 @@ function iniciar() {
     grupo_1 = document.getElementById('grupo-1').addEventListener('click', establecer_grupo_1)
     grupo_2 = document.getElementById('grupo-2').addEventListener('click', establecer_grupo_2)
     grupo_3 = document.getElementById('grupo-3').addEventListener('click', establecer_grupo_3)
+
+    texto = document.getElementById('lanzamientos-restantes');
+    texto.innerText = numero_lanzamientos;
 }
 
 function establecer_grupo_1() { grupo_seleccion = 1; }
@@ -64,12 +67,35 @@ function crear_cartas(numero_cartas) {
         div.id = i;
         div.className = "carta animate__animated animate__backInUp";
         div.addEventListener('click', seleccionar_carta);
+        div.addEventListener('mouseover', mostrar_carta);
+        div.addEventListener('mouseout', mostrar_carta);
         div.innerText = i + 1
 
         cartas_creadas.push(new Carta(i + 1, div));
     }
 
     return cartas_creadas
+}
+
+function mostrar_carta(e) {
+    div_carta = e.target;
+    carta = lista_cartas[div_carta.id]
+    vista_previa = document.getElementById('vista-previa');
+
+    if (e.type == 'mouseover') {
+        vista_previa.innerText = div_carta.innerText;
+        div_carta.style.boxShadow = '0px 0px 10px 5px purple';
+
+        if (carta.seleccionada) {
+            vista_previa.style.backgroundColor = 'red';
+        } else {
+            vista_previa.style.backgroundColor = 'green';
+        }
+    } else {
+        div_carta.style.boxShadow = '';
+        vista_previa.innerText = '';
+        vista_previa.style.backgroundColor = '';
+    }
 }
 
 function seleccionar_carta(e) {
@@ -128,8 +154,11 @@ async function realizar_lanzamiento() {
         posicion = (lista_cartas.length - 1) / 2;
         carta = lista_cartas[posicion];
 
-        alert(`La carta que eligió fue: ${ carta.n }`);
+        alert(`La carta que eligió fue: ${carta.n}`);
     }
+
+    texto = document.getElementById('lanzamientos-restantes');
+    texto.innerText = numero_lanzamientos;
 }
 
 async function repartir_cartas(cartas) {
