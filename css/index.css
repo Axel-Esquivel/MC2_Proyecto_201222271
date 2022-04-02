@@ -1,6 +1,6 @@
 .conainer{
-    background-color: rgba(46, 46, 46, 0.9);
     color: #fff;
+    background-color: rgba(46, 46, 46, 0.9);
 }
 
 .centrar_titulo {
@@ -12,36 +12,68 @@
 .formulario {
     padding: 1em;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+}
+
+.formulario > form {
+    margin: 1em;
 }
 
 .contenedor-contenedores{
     margin: 2em;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    align-items: center;
+    display: grid;
+    align-content: center;
     justify-content: center;
+    grid-template-columns: auto auto auto;
 }
 
 .contenedor-cartas {
     width: 35em;
-    padding: 1em;
     height: 40em;
     margin: 0.2em;
     position: relative;
-    /* border: 0.2em solid black; */
+    border: 0.2em solid black;
 }
 
 .carta {
     width: 6em;
     height: 10em;
+    display: flex;
     position: absolute;
+    align-items: center;
+    justify-content: center;
     background-color: green;
     border: 0.1em solid black;
 }
 
 .seleccionada {
     background-color: red;
+}
+
+@media (min-width: 0px) and (max-width: 1110px) {
+    body{
+        font-size: 8px;
+    }
+
+    .contenedor-contenedores{
+        grid-template-columns: auto;
+    }
+}
+
+@media (min-width: 1110px) and (max-width: 1910px) {
+    .contenedor-contenedores{
+        grid-template-columns: auto auto;
+    }
+}
+
+@media (min-width: 1910px) and (max-width: 4000px) {
+    body{
+        font-size: 15px;
+    }
+
+    .contenedor-contenedores{
+        grid-template-columns: auto auto auto;
+    }
 }

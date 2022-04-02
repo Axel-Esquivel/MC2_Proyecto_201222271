@@ -13,27 +13,55 @@
 </head>
 
 <body class="conainer">
-    <h5 class="centrar_titulo">Adivinación</h5>
+    <h1 class="centrar_titulo">Adivinación</h1>
 
     <div class="formulario">
         <form>
             <fieldset>
                 <legend>Cartas</legend>
                 <div class="mb-3">
-                    <label for="cartas" class="form-label">Seleccione el número de cartas a utilizar</label>
+                    <label for="cartas" class="form-label">Seleccione el número de cartas a utilizar:</label>
                     <select id="numero_cartas" class="form-control"></select>
                 </div>
 
-                <button id="agregar-cartas" type="button" class="btn btn-primary">Agregar cartas</button>
-                <button id="iniciar-lanzamientos" type="button" class="btn btn-primary">Iniciar lanzamientos</button>
+                <button id="agregar-cartas" type="button" class="btn btn-primary" style="width: 100%;">Agregar cartas</button>
+            </fieldset>
+        </form>
+
+        <form>
+            <fieldset>
+                <legend>Lanzamientos</legend>
+                <div class="mb-3">
+                    <label class="form-label">En que grupo esta su carta?</label>
+                </div>
+                
+                <button id="grupo-1" type="button" class="btn btn-secondary">Grupo 1</button>
+                <button id="grupo-2" type="button" class="btn btn-secondary">Grupo 2</button>
+                <button id="grupo-3" type="button" class="btn btn-secondary">Grupo 3</button>
+
+                <div class="mt-3 mb-3">
+                    <label class="form-label">Lanzamientos restantes: <span id="lanzamientos-restantes"></span></label>
+                    <button id="iniciar-lanzamiento" type="button" class="btn btn-success" style="width: 100%;">Realizar lanzamiento</button>
+                </div>
             </fieldset>
         </form>
     </div>
 
     <div class="contenedor-contenedores">
-        <div id="contenedor-a" class="contenedor-cartas"></div>
-        <div id="contenedor-b" class="contenedor-cartas"></div>
-        <div id="contenedor-c" class="contenedor-cartas"></div>
+        <div>
+            <h1 class="centrar_titulo">Grupo 1</h1>
+            <div id="contenedor-a" class="contenedor-cartas"></div>
+        </div>
+
+        <div>
+            <h1 class="centrar_titulo">Grupo 2</h1>
+            <div id="contenedor-b" class="contenedor-cartas"></div>
+        </div>
+
+        <div>
+            <h1 class="centrar_titulo">Grupo 3</h1>
+            <div id="contenedor-c" class="contenedor-cartas"></div>
+        </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
